@@ -116,7 +116,7 @@ function draw(){
       trex.changeAnimation ("Running")
     }
 
-    ground.velocityX = -3
+    ground.velocityX =  -(3 + score/100)
 
     score = score + Math.round(getFrameRate()/60)
 
@@ -169,7 +169,7 @@ function gravity(){
 function spawnSpike(){
   if(frameCount %100 == 0){
     spike = createSprite (590,170) 
-    spike.velocityX = -3
+    spike.velocityX =  -(3 + score/100)
     var sorteio = Math.round(random (1,6))
     spike.lifetime = 330
     switch (sorteio) {
@@ -200,7 +200,7 @@ function spawnSpike(){
 function spawnCloud(){
   if(frameCount %60 == 0){
     cloud = createSprite (600,random(30,120),20,20)
-    cloud.velocityX = -3
+    cloud.velocityX =  -(3 + score/100)
     cloud.addImage (cloudImg)
     cloud.scale = random (0.7,1.3)
     cloud.depth = trex.depth - 1
